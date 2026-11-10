@@ -1,0 +1,6 @@
+{
+  "name": "Humaidah — Pharmacy & Health Innovation Portfolio",
+  "description": "Interactive portfolio, research data visualization, and project showcase of Humaidah (Faculty of Pharmacy, Universitas Indonesia).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

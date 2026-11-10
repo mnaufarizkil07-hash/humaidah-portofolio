@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-canvas: #f0ebe3;
+    --bg-card: #ffffff;
+    --text-main: #111111;
+    --text-muted: #52525b;
+    --accent-mint: #29a587;
+    --border-ink: #111111;
+  }
+
+  .dark {
+    --bg-canvas: #181e26;
+    --bg-card: #222a35;
+    --text-main: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --accent-mint: #29a587;
+    --border-ink: #090d11;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-main);
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Luique Hero Outlined Text Match (like ZOÉ MILLER in screenshot) */
+.luique-title-filled {
+  color: #29a587;
+  -webkit-text-stroke: 2px #111111;
+  text-shadow: 3px 3px 0px #111111;
+}
+
+.dark .luique-title-filled {
+  color: #29a587;
+  -webkit-text-stroke: 2px #000000;
+  text-shadow: 3px 3px 0px #000000;
+}
+
+.luique-title-outline {
+  color: #ffffff;
+  -webkit-text-stroke: 2px #111111;
+  text-shadow: 3px 3px 0px #111111;
+}
+
+.dark .luique-title-outline {
+  color: #222a35;
+  -webkit-text-stroke: 2px #f4f4f5;
+  text-shadow: 3px 3px 0px #000000;
+}
+
+/* Luique signature pill & button shadow */
+.luique-pill-shadow {
+  border: 2px solid #111111;
+  box-shadow: 4px 4px 0px rgba(17, 17, 17, 0.22);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .luique-pill-shadow {
+  border: 2px solid #f4f4f5;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.65);
+}
+
+.luique-pill-shadow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #29a587;
+}
+
+.luique-circle-btn {
+  border: 2px solid #111111;
+  box-shadow: 3px 3px 0px rgba(17, 17, 17, 0.22);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease;
+}
+
+.dark .luique-circle-btn {
+  border: 2px solid #f4f4f5;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes sectionFadeSlide {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.section-enter {
+  animation: sectionFadeSlide 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
